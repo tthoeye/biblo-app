@@ -31,7 +31,7 @@ $(document).ready(function() {
          */
         getImages : function() {
             jQuery.ajax({
-                url: "http://api.bieblo.be/API/illustrations",
+                url: "http://api.bieblo.open.gent/API/illustrations",
                 type:"GET",
                 dataType: "json",
                 success: function(data) {
@@ -234,7 +234,7 @@ $(document).ready(function() {
         getBooks : function() {
             var likes = overview.removeComma(swipe.liked.join());
             var dislikes = overview.removeComma(swipe.disliked.join());
-            var url = "http://api.bieblo.be/API/recommendations?likes=" + likes + "&dislikes=" + dislikes;
+            var url = "http://api.bieblo.open.gent/API/recommendations?likes=" + likes + "&dislikes=" + dislikes;
 
             jQuery.ajax({
                 url: url,
@@ -329,7 +329,7 @@ $(document).ready(function() {
             var form = $(".email-popup form");
 
             $.ajax({
-                url: "http://api.bieblo.be/API/email?email=" + email + "&books=" + overview.books,
+                url: "http://api.bieblo.open.gent/API/email?email=" + email + "&books=" + overview.books,
                 contentType: "application/json",
                 type: "POST",
                 data: {"email": email, "books": overview.books},
