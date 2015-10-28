@@ -70,7 +70,7 @@ gulp.task('handlebars', function(){
 gulp.task('handlebars-template', function () {
     return gulp.src('*.js', {read: false})
         .pipe(shell([
-            'handlebars src/templates/ >> src/scripts/templates.js'
+            'handlebars src/templates/ > src/scripts/templates.js'
         ]))
 });
 

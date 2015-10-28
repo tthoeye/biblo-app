@@ -1,10 +1,21 @@
-<figure>
+<figure data-index="{{ key }}">
     <img src="{{ coverimage }}" alt="" />
     <div class="title">{{ title }}</div>
-    <div class="delete">
+    <div class="icon delete">
         <img src="img/icon-refresh.svg" alt="X" class="delete-image">
     </div>
+    {{#if available}}
+    <div class="icon available">
+        <img src="img/icon-available.svg" alt="Beschikbaar" class="available-image">
+    </div>
+    {{else}}
+    <div class="icon unavailable">
+        <img src="img/icon-unavailable.svg" alt="Niet beschikbaar" class="unavailable-image">
+    </div>
+    {{/if}}
+
 </figure>
+
 <div class="print">
     <div class="img">
         <img src="{{ coverimage }}" alt="" />
@@ -13,5 +24,6 @@
         <div class="title">{{ title }}</div>
         <div class="author"><strong>Auteur</strong> {{ author }}</div>
         <div class="genre"><strong>Genre</strong> {{ genres }}</div>
+        <div class="location"><strong>Location</strong> {{ available }}</div>
     </div>
 </div>

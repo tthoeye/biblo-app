@@ -3,7 +3,10 @@
  * @copyright: open Summer of code
  */
 $(document).ready(function() {
-
+ 
+    // Fucking handlebars. Ridiculous.
+    Handlebars.partials = Handlebars.templates;
+    
     /**
      * Swipe controller
      * @type {{images: {}, index: number, liked: Array, disliked: Array, init: Function, getImages: Function,
@@ -234,6 +237,9 @@ $(document).ready(function() {
         getBooks : function() {
             var likes = overview.removeComma(swipe.liked.join());
             var dislikes = overview.removeComma(swipe.disliked.join());
+            
+            $(".books").append("<div class=\"spinner\"><div class=\"bounce1\"></div><div class=\"bounce2\"></div><div class=\"bounce3\"></div></div>");
+            
             var url = "http://api.bieblo.open.gent/API/recommendations?likes=" + likes + "&dislikes=" + dislikes;
 
             jQuery.ajax({
@@ -276,6 +282,7 @@ $(document).ready(function() {
          * @param data
          */
         showBooks : function(data) {
+            $(".books").empty();
             data = data.slice(0, overview.booksPerPage);
             var handlebars = Handlebars.templates['overview-template'];
             $(".books").append(handlebars(data));
@@ -293,6 +300,10 @@ $(document).ready(function() {
             var book = overview.books[id];
             var handlebars = Handlebars.templates['detail-template'];
             $(".overlay").append(handlebars(book));
+            console.log(id);
+            console.log(overview.books);
+            console.log(book);
+            console.log(handlebars(book));
         },
 
         /**
