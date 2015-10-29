@@ -3,19 +3,16 @@
  * @copyright: open Summer of code
  */
 
-spinner {
+.spinner {
   margin: 100px auto 0;
-  width: 70px;
-  text-align: center;
-  color: white;
-  text-align: center;
+  display: block;
+  max-width: 80px;
 }
 
 .spinner > div {
   width: 18px;
   height: 18px;
-  background-color: #333;
-
+  background-color: #fff;
   border-radius: 100%;
   display: inline-block;
   -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
@@ -290,7 +287,6 @@ spinner {
                             overflow: hidden;
                             text-overflow: ellipsis;
                             margin-bottom: 16px;
-                            color: white;
                         }
 
                         .icon-author {
@@ -317,7 +313,7 @@ spinner {
                         .icon-location {
                             display: inline-block;
 
-                            background: url("../img/icon-home.svg") no-repeat;
+                            background: url("../img/icon-location.svg") no-repeat;
                             width: 18px;
                             height: 18px;
                             background-size: 18px 18px;

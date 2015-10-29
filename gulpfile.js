@@ -95,7 +95,7 @@ gulp.task('server', function(cb) {
 });
 
 // Default task
-gulp.task('default', ['html', 'styles', 'handlebars-template', 'scripts', 'images', 'jquery', 'handlebars', 'api', 'watch']);
+gulp.task('default', ['html', 'styles', 'handlebars-template', 'images', 'jquery', 'handlebars', 'api', 'scripts', 'watch']);
 
 // Watch
 gulp.task('watch', function() {
